@@ -5,7 +5,7 @@ from src.learning.q_learning import QLearningTable
 from src.learning.policy import Policy
 from src.communication.message import (
     Message, FIPA_CFP, FIPA_PROPOSE, 
-    FIPA_ACCEPT_PROPOSAL, FIPA_REJECT_PROPOSAL, FIPA_INFORM
+    FIPA_ACCEPT_PROPOSAL, FIPA_REJECT_PROPOSAL, FIPA_REFUSE
 )
 
 class TransporterAgent(BaseAgent):
@@ -50,7 +50,15 @@ class TransporterAgent(BaseAgent):
                         content={'order_id': msg.content['order_id'], 'cost': cost}
                     )
                     post_office.send_message(reply)
-            
+                else:
+                    reply = Message(
+                        sender_id=self.agent_id,
+                        receiver_id=msg.sender_id,
+                        performative=FIPA_REFUSE,
+                        content={'order_id': msg.content['order_id']}
+                    )
+                    post_office.send_message(reply)
+
             elif msg.performative == FIPA_ACCEPT_PROPOSAL:
                 self.is_busy = True
                 self.current_target = msg.content['destination']

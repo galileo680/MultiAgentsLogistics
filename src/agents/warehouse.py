@@ -23,7 +23,7 @@ class WarehouseAgent(BaseAgent):
                 self.handle_proposal(msg)
                 
             elif msg.performative == FIPA_REFUSE:
-                pass
+                self.handle_refusal(msg)
 
         self.finalize_auctions(post_office)
 
@@ -56,6 +56,11 @@ class WarehouseAgent(BaseAgent):
                 'cost': cost
             })
             auction['pending_responses'] -= 1
+
+    def handle_refusal(self, msg):
+        order_id = msg.content['order_id']
+        if order_id in self.active_auctions:
+            self.active_auctions[order_id]['pending_responses'] -= 1
 
     def finalize_auctions(self, post_office):
         for order_id in list(self.active_auctions.keys()):

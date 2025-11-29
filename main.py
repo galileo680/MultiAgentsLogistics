@@ -61,4 +61,4 @@ def run_simulation(num_steps=100):
         t.brain.save_table(f"{t.agent_id}_brain.npy")
 
 if __name__ == "__main__":
-    run_simulation(num_steps=3000)
+    run_simulation(num_steps=2000)
