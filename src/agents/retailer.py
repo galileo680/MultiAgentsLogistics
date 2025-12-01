@@ -3,8 +3,8 @@ from src.agents.base_agent import BaseAgent
 from src.communication.message import Message, FIPA_REQUEST
 
 class RetailerAgent(BaseAgent):
-    def __init__(self, agent_id, start_pos, warehouse_id):
-        super().__init__(agent_id, start_pos)
+    def __init__(self, agent_id, start_pos,label, warehouse_id):
+        super().__init__(agent_id, start_pos, label)
         self.warehouse_id = warehouse_id
         self.orders_placed = 0
 

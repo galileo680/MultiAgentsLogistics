@@ -9,8 +9,8 @@ from src.communication.message import (
 )
 
 class TransporterAgent(BaseAgent):
-    def __init__(self, agent_id, start_pos):
-        super().__init__(agent_id, start_pos)
+    def __init__(self, agent_id, start_pos, label):
+        super().__init__(agent_id, start_pos, label)
         
         self.brain = QLearningTable(
             actions=list(range(config.NUM_ACTIONS)),
@@ -22,6 +22,7 @@ class TransporterAgent(BaseAgent):
         self.is_busy = False
         self.current_target = None
         self.current_order_id = None
+        self.reached_goal_count = 0
         
         self.total_reward = 0
 
@@ -77,6 +78,7 @@ class TransporterAgent(BaseAgent):
         
         if next_pos == self.current_target:
             reward = config.REWARD_GOAL
+            self.reached_goal_count += 1
             done = True
         elif hit_wall:
             if next_pos == state: 

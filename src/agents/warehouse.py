@@ -6,8 +6,8 @@ from src.communication.message import (
 )
 
 class WarehouseAgent(BaseAgent):
-    def __init__(self, agent_id, start_pos, transporter_ids):
-        super().__init__(agent_id, start_pos)
+    def __init__(self, agent_id, start_pos,label, transporter_ids):
+        super().__init__(agent_id, start_pos, label)
         self.transporter_ids = transporter_ids
         
         self.active_auctions = {}

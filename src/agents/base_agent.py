@@ -1,7 +1,8 @@
 class BaseAgent:
-    def __init__(self, agent_id, start_pos):
+    def __init__(self, agent_id, start_pos, label):
         self.agent_id = agent_id
         self.position = start_pos
+        self.label = label
         
         self.history = []
 
