@@ -47,12 +47,12 @@ class GridMap:
             row_str = "|"
             for x in range(self.width):
                 if agent_pos and agent_pos == (x, y):
-                    row_str += "A " # Agent
+                    row_str += "A "
                 elif self.grid[y][x] == self.OBSTACLE:
-                    row_str += "# " # Ściana
+                    row_str += "# "
                 elif self.grid[y][x] == self.GOAL:
-                    row_str += "G " # Cel
+                    row_str += "G "
                 else:
-                    row_str += ". " # Droga
+                    row_str += ". " 
             print(row_str + "|")
         print("-" * (self.width * 2 + 2))

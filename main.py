@@ -37,13 +37,13 @@ def run_simulation(num_steps=100):
     print(f"Start symulacji na {num_steps} kroków...")
     
     for step in range(num_steps):
-        if step % 5 == 0:
-            os.system('cls' if os.name == 'nt' else 'clear')
-            print(f"--- KROK {step}/{num_steps} ---")
-            grid.render_console(agent_pos=t1.position)
-            print(f"Transporter-1 Busy: {t1.is_busy}, Reward: {t1.total_reward}")
-            print(f"Transporter-2 Busy: {t2.is_busy}")
-            print(f"Poczta: {len(post_office.history)} wysłanych wiadomości.")
+        #if step % 5 == 0:
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print(f"--- KROK {step}/{num_steps} ---")
+        grid.render_console(agent_pos=t1.position)
+        print(f"Transporter-1 Busy: {t1.is_busy}, Reward: {t1.total_reward}")
+        print(f"Transporter-2 Busy: {t2.is_busy}")
+        print(f"Poczta: {len(post_office.history)} wysłanych wiadomości.")
 
         retailer.step(dynamics, post_office)
         
