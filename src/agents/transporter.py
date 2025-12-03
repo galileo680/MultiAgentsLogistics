@@ -107,7 +107,7 @@ class TransporterAgent(BaseAgent):
                 done = True
 
         elif hit_wall:
-            if next_pos == state: 
+            if next_pos == self.position: 
                 reward = config.REWARD_COLLISION
             else:
                 reward = config.REWARD_STEP

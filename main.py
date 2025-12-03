@@ -10,7 +10,7 @@ from src.agents.transporter import TransporterAgent
 
 def run_simulation(num_steps=100):
     grid = GridMap(config.GRID_WIDTH, config.GRID_HEIGHT,)
-    grid.generate_simple_map() # Generuje ściany i układ
+    grid.generate_simple_map()
     
     dynamics = EnvironmentDynamics(grid)
     post_office = PostOffice()
@@ -65,4 +65,4 @@ def run_simulation(num_steps=100):
         t.brain.save_table(f"{t.agent_id}_brain.npy")
 
 if __name__ == "__main__":
-    run_simulation(num_steps=2000)
+    run_simulation(num_steps=8000)
