@@ -20,8 +20,13 @@ class TransporterAgent(BaseAgent):
         self.epsilon = config.EPSILON_START
         
         self.is_busy = False
+        self.has_cargo = False;
+
         self.current_target = None
+        self.final_destination = None;  # Sklep
+        self.warehouse_location = None; # Magazyn
         self.current_order_id = None
+
         self.reached_goal_count = 0
         
         self.total_reward = 0
@@ -62,9 +67,14 @@ class TransporterAgent(BaseAgent):
 
             elif msg.performative == FIPA_ACCEPT_PROPOSAL:
                 self.is_busy = True
-                self.current_target = msg.content['destination']
+                self.has_cargo = False
                 self.current_order_id = msg.content['order_id']
+                self.final_destination = msg.content['destination']
 
+                self.warehouse_location = (5, 5) # zhardcodowane, do zmiany
+
+                self.current_target = self.warehouse_location
+                
             elif msg.performative == FIPA_REJECT_PROPOSAL:
                 pass
 
@@ -76,10 +86,23 @@ class TransporterAgent(BaseAgent):
         
         next_pos, env_reward, hit_wall = environment_dynamics.step(state, action_idx)
         
+        reward = config.REWARD_GOAL
+        done = False
+
         if next_pos == self.current_target:
-            reward = config.REWARD_GOAL
-            self.reached_goal_count += 1
-            done = True
+            
+            # Agent dotarl do magazynu i odbiera towar
+            if not self.has_cargo:
+                self.has_cargo = True
+                self.current_target = self.final_destination
+                reward = 20; # zhardkodowane -> do zmiany
+            
+            # Agent dotarl do sklepu
+            else:
+                reward = config.REWARD_GOAL
+                self.reached_goal_count += 1
+                done = True
+
         elif hit_wall:
             if next_pos == state: 
                 reward = config.REWARD_COLLISION
@@ -91,7 +114,6 @@ class TransporterAgent(BaseAgent):
             done = False
 
         self.brain.learn(state, action_idx, reward, next_pos, done)
-        
         self.position = next_pos
         self.total_reward += reward
         
@@ -100,7 +122,9 @@ class TransporterAgent(BaseAgent):
 
     def finish_job(self, post_office):
         self.is_busy = False
+        self.has_cargo = False
         self.current_target = None
         self.current_order_id = None
+        self.final_destination = None
         
         self.epsilon = max(config.EPSILON_MIN, self.epsilon * config.EPSILON_DECAY)
