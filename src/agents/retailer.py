@@ -9,7 +9,7 @@ class RetailerAgent(BaseAgent):
         self.orders_placed = 0
 
     def step(self, environment_dynamics, post_office):
-        if random.random() < 0.2: #prev: 0.05
+        if random.random() < 0.05: #prev: 0.05
             self.generate_order(post_office)
 
         messages = post_office.get_messages(self.agent_id)

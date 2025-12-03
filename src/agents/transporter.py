@@ -31,6 +31,9 @@ class TransporterAgent(BaseAgent):
         
         self.total_reward = 0
 
+    def get_state(self):
+        return (self.position, self.has_cargo)
+
     def step(self, environment_dynamics, post_office):
         self.handle_messages(post_office)
         
@@ -79,14 +82,14 @@ class TransporterAgent(BaseAgent):
                 pass
 
     def move_towards_target(self, environment_dynamics, post_office):
-        state = self.position
+        state = self.get_state()
         
         q_values = self.brain.get_q_values(state)
         action_idx = Policy.epsilon_greedy(q_values, self.epsilon, config.NUM_ACTIONS)
         
-        next_pos, env_reward, hit_wall = environment_dynamics.step(state, action_idx)
+        next_pos, env_reward, hit_wall = environment_dynamics.step(self.position, action_idx)
         
-        reward = config.REWARD_GOAL
+        reward = config.REWARD_STEP
         done = False
 
         if next_pos == self.current_target:
@@ -113,7 +116,9 @@ class TransporterAgent(BaseAgent):
             reward = config.REWARD_STEP
             done = False
 
-        self.brain.learn(state, action_idx, reward, next_pos, done)
+        next_state = (next_pos, self.has_cargo)
+
+        self.brain.learn(state, action_idx, reward, next_state, done)
         self.position = next_pos
         self.total_reward += reward
         
