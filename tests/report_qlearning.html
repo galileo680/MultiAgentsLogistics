@@ -1,0 +1,866 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" /><title>Cosmic Ray Report</title></head><body><div class="container"><h1><p class="text-dark">Cosmic Ray Report</p></h1></div><div class="container"><div class="mb-1" id="summary_info___accordion"><div class="card"><a data-toggle="collapse" data-target="#summary_info___collapse_1" aria-expanded="true" aria-controls="summary_info___collapse_1" href="#"><div class="card-header" id="summary_info___heading_1"><button class="btn btn-outline-dark"><h4 class="m-0">Summary info</h4></button></div></a><div aria-labelledby="summary_info___heading_1" data-parent="#summary_info___accordion" class="collapse show" id="summary_info___collapse_1"><div class="card-body"><p>Date time: 15/12/2025 23:17:42</p><p>Total jobs: 51</p><p>Complete: 51 (100.00%)</p><p>Surviving mutants: 0 (0.00%)</p></div></div></div></div><div class="mb-1" id="job_list___accordion"><div class="card"><a data-toggle="collapse" data-target="#job_list___collapse_1" aria-expanded="false" aria-controls="job_list___collapse_1" href="#"><div class="card-header" id="job_list___heading_1"><button class="btn btn-outline-dark"><h4 class="m-0">Job list</h4></button></div></a><div aria-labelledby="job_list___heading_1" data-parent="#job_list___accordion" class="collapse" id="job_list___collapse_1"><div class="card-body"><div class="text-right mb-1"><div class="mx-1" id="job_item_expand_all"><a href="#" onclick="$('div.job_list___sub_multi_collapse').collapse('show');"><button class="btn btn-outline-dark"><span>Expand All</span></button></a></div><div class="mx-1" id="job_item_collapse_all"><a href="#" onclick="$('div.job_list___sub_multi_collapse').collapse('hide');"><button class="btn btn-outline-dark"><span>Collapse All</span></button></a></div></div><div class="mb-1" id="job_list___sub_accordion_1"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_1_1" aria-expanded="false" aria-controls="job_list___sub_collapse_1_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_1_1"><button class="btn btn-outline-success"><span class="job_id">1 : Job ID e438e313a82548e4ba568b5f08e04410</span></button></div></a><div aria-labelledby="job_list___sub_heading_1_1" data-parent="#job_list___sub_accordion_1" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_1_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=28" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (28, 30), end pos: (28, 31)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Sub, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -25,7 +25,7 @@
+             next_q_values = self.q_table[next_state_key]
+             max_next_q = np.max(next_q_values)
+             
+-            q_target = reward + self.gamma * max_next_q
++            q_target = reward - self.gamma * max_next_q
+ 
+         self.q_table[state_key][action_idx] += self.lr * (q_target - q_predict)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_2"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_2_1" aria-expanded="false" aria-controls="job_list___sub_collapse_2_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_2_1"><button class="btn btn-outline-success"><span class="job_id">2 : Job ID 0f3e370437954a1985804fb834a5f24b</span></button></div></a><div aria-labelledby="job_list___sub_heading_2_1" data-parent="#job_list___sub_accordion_2" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_2_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=28" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (28, 30), end pos: (28, 31)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Mul, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -25,7 +25,7 @@
+             next_q_values = self.q_table[next_state_key]
+             max_next_q = np.max(next_q_values)
+             
+-            q_target = reward + self.gamma * max_next_q
++            q_target = reward * self.gamma * max_next_q
+ 
+         self.q_table[state_key][action_idx] += self.lr * (q_target - q_predict)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_3"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_3_1" aria-expanded="false" aria-controls="job_list___sub_collapse_3_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_3_1"><button class="btn btn-outline-success"><span class="job_id">3 : Job ID fdb9f7d43a304d44a7032d18c2c8b4e2</span></button></div></a><div aria-labelledby="job_list___sub_heading_3_1" data-parent="#job_list___sub_accordion_3" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_3_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=28" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (28, 30), end pos: (28, 31)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Div, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -25,7 +25,7 @@
+             next_q_values = self.q_table[next_state_key]
+             max_next_q = np.max(next_q_values)
+             
+-            q_target = reward + self.gamma * max_next_q
++            q_target = reward / self.gamma * max_next_q
+ 
+         self.q_table[state_key][action_idx] += self.lr * (q_target - q_predict)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_4"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_4_1" aria-expanded="false" aria-controls="job_list___sub_collapse_4_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_4_1"><button class="btn btn-outline-success"><span class="job_id">4 : Job ID 9e6da6d885504f5e9a4b395b8d83165a</span></button></div></a><div aria-labelledby="job_list___sub_heading_4_1" data-parent="#job_list___sub_accordion_4" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_4_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=28" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (28, 30), end pos: (28, 31)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_FloorDiv, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -25,7 +25,7 @@
+             next_q_values = self.q_table[next_state_key]
+             max_next_q = np.max(next_q_values)
+             
+-            q_target = reward + self.gamma * max_next_q
++            q_target = reward // self.gamma * max_next_q
+ 
+         self.q_table[state_key][action_idx] += self.lr * (q_target - q_predict)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_5"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_5_1" aria-expanded="false" aria-controls="job_list___sub_collapse_5_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_5_1"><button class="btn btn-outline-success"><span class="job_id">5 : Job ID 0153c236d5c3412b98d58aad58d8e4fc</span></button></div></a><div aria-labelledby="job_list___sub_heading_5_1" data-parent="#job_list___sub_accordion_5" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_5_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=28" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (28, 30), end pos: (28, 31)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Mod, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -25,7 +25,7 @@
+             next_q_values = self.q_table[next_state_key]
+             max_next_q = np.max(next_q_values)
+             
+-            q_target = reward + self.gamma * max_next_q
++            q_target = reward % self.gamma * max_next_q
+ 
+         self.q_table[state_key][action_idx] += self.lr * (q_target - q_predict)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_6"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_6_1" aria-expanded="false" aria-controls="job_list___sub_collapse_6_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_6_1"><button class="btn btn-outline-success"><span class="job_id">6 : Job ID 48c3253597054421ad0b6be3c590d7af</span></button></div></a><div aria-labelledby="job_list___sub_heading_6_1" data-parent="#job_list___sub_accordion_6" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_6_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=28" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (28, 30), end pos: (28, 31)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Pow, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -25,7 +25,7 @@
+             next_q_values = self.q_table[next_state_key]
+             max_next_q = np.max(next_q_values)
+             
+-            q_target = reward + self.gamma * max_next_q
++            q_target = reward ** self.gamma * max_next_q
+ 
+         self.q_table[state_key][action_idx] += self.lr * (q_target - q_predict)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_7"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_7_1" aria-expanded="false" aria-controls="job_list___sub_collapse_7_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_7_1"><button class="btn btn-outline-success"><span class="job_id">7 : Job ID f9ea5a90a7b54e1a86f088f68007c11f</span></button></div></a><div aria-labelledby="job_list___sub_heading_7_1" data-parent="#job_list___sub_accordion_7" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_7_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=28" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (28, 30), end pos: (28, 31)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_RShift, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -25,7 +25,7 @@
+             next_q_values = self.q_table[next_state_key]
+             max_next_q = np.max(next_q_values)
+             
+-            q_target = reward + self.gamma * max_next_q
++            q_target = reward &gt;&gt; self.gamma * max_next_q
+ 
+         self.q_table[state_key][action_idx] += self.lr * (q_target - q_predict)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_8"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_8_1" aria-expanded="false" aria-controls="job_list___sub_collapse_8_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_8_1"><button class="btn btn-outline-success"><span class="job_id">8 : Job ID b6af86fc41c84698b7b8a7a8eba7f152</span></button></div></a><div aria-labelledby="job_list___sub_heading_8_1" data-parent="#job_list___sub_accordion_8" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_8_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=28" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (28, 30), end pos: (28, 31)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_LShift, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -25,7 +25,7 @@
+             next_q_values = self.q_table[next_state_key]
+             max_next_q = np.max(next_q_values)
+             
+-            q_target = reward + self.gamma * max_next_q
++            q_target = reward &lt;&lt; self.gamma * max_next_q
+ 
+         self.q_table[state_key][action_idx] += self.lr * (q_target - q_predict)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_9"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_9_1" aria-expanded="false" aria-controls="job_list___sub_collapse_9_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_9_1"><button class="btn btn-outline-success"><span class="job_id">9 : Job ID 1022d38a96ee4610b6a2e93fdfc715a2</span></button></div></a><div aria-labelledby="job_list___sub_heading_9_1" data-parent="#job_list___sub_accordion_9" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_9_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=28" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (28, 30), end pos: (28, 31)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_BitOr, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -25,7 +25,7 @@
+             next_q_values = self.q_table[next_state_key]
+             max_next_q = np.max(next_q_values)
+             
+-            q_target = reward + self.gamma * max_next_q
++            q_target = reward | self.gamma * max_next_q
+ 
+         self.q_table[state_key][action_idx] += self.lr * (q_target - q_predict)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_10"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_10_1" aria-expanded="false" aria-controls="job_list___sub_collapse_10_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_10_1"><button class="btn btn-outline-success"><span class="job_id">10 : Job ID 118445df8d39473191104a6143cd8c89</span></button></div></a><div aria-labelledby="job_list___sub_heading_10_1" data-parent="#job_list___sub_accordion_10" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_10_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=28" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (28, 30), end pos: (28, 31)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_BitAnd, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -25,7 +25,7 @@
+             next_q_values = self.q_table[next_state_key]
+             max_next_q = np.max(next_q_values)
+             
+-            q_target = reward + self.gamma * max_next_q
++            q_target = reward &amp; self.gamma * max_next_q
+ 
+         self.q_table[state_key][action_idx] += self.lr * (q_target - q_predict)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_11"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_11_1" aria-expanded="false" aria-controls="job_list___sub_collapse_11_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_11_1"><button class="btn btn-outline-success"><span class="job_id">11 : Job ID 85cfa8a740dd4ba6937b8ec89954d710</span></button></div></a><div aria-labelledby="job_list___sub_heading_11_1" data-parent="#job_list___sub_accordion_11" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_11_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=28" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (28, 30), end pos: (28, 31)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_BitXor, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -25,7 +25,7 @@
+             next_q_values = self.q_table[next_state_key]
+             max_next_q = np.max(next_q_values)
+             
+-            q_target = reward + self.gamma * max_next_q
++            q_target = reward ^ self.gamma * max_next_q
+ 
+         self.q_table[state_key][action_idx] += self.lr * (q_target - q_predict)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_12"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_12_1" aria-expanded="false" aria-controls="job_list___sub_collapse_12_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_12_1"><button class="btn btn-outline-success"><span class="job_id">12 : Job ID ab62862786d54af6bc021a3f6e5e7671</span></button></div></a><div aria-labelledby="job_list___sub_heading_12_1" data-parent="#job_list___sub_accordion_12" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_12_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=30" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (30, 67), end pos: (30, 68)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Sub_Add, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -27,7 +27,7 @@
+             
+             q_target = reward + self.gamma * max_next_q
+ 
+-        self.q_table[state_key][action_idx] += self.lr * (q_target - q_predict)
++        self.q_table[state_key][action_idx] += self.lr * (q_target + q_predict)
+ 
+     def save_table(self, filename="q_table.npy"):
+         np.save(filename, dict(self.q_table))</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_13"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_13_1" aria-expanded="false" aria-controls="job_list___sub_collapse_13_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_13_1"><button class="btn btn-outline-success"><span class="job_id">13 : Job ID 7835a06ef6c0432db4cceb25cce1113a</span></button></div></a><div aria-labelledby="job_list___sub_heading_13_1" data-parent="#job_list___sub_accordion_13" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_13_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=30" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (30, 67), end pos: (30, 68)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Sub_Mul, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -27,7 +27,7 @@
+             
+             q_target = reward + self.gamma * max_next_q
+ 
+-        self.q_table[state_key][action_idx] += self.lr * (q_target - q_predict)
++        self.q_table[state_key][action_idx] += self.lr * (q_target * q_predict)
+ 
+     def save_table(self, filename="q_table.npy"):
+         np.save(filename, dict(self.q_table))</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_14"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_14_1" aria-expanded="false" aria-controls="job_list___sub_collapse_14_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_14_1"><button class="btn btn-outline-success"><span class="job_id">14 : Job ID cfa994e9432b43fb996b6220a1e47007</span></button></div></a><div aria-labelledby="job_list___sub_heading_14_1" data-parent="#job_list___sub_accordion_14" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_14_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=30" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (30, 67), end pos: (30, 68)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Sub_Div, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -27,7 +27,7 @@
+             
+             q_target = reward + self.gamma * max_next_q
+ 
+-        self.q_table[state_key][action_idx] += self.lr * (q_target - q_predict)
++        self.q_table[state_key][action_idx] += self.lr * (q_target / q_predict)
+ 
+     def save_table(self, filename="q_table.npy"):
+         np.save(filename, dict(self.q_table))</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_15"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_15_1" aria-expanded="false" aria-controls="job_list___sub_collapse_15_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_15_1"><button class="btn btn-outline-success"><span class="job_id">15 : Job ID 2fc17f3f9e544c819ebc1556cf728843</span></button></div></a><div aria-labelledby="job_list___sub_heading_15_1" data-parent="#job_list___sub_accordion_15" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_15_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=30" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (30, 67), end pos: (30, 68)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Sub_FloorDiv, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -27,7 +27,7 @@
+             
+             q_target = reward + self.gamma * max_next_q
+ 
+-        self.q_table[state_key][action_idx] += self.lr * (q_target - q_predict)
++        self.q_table[state_key][action_idx] += self.lr * (q_target // q_predict)
+ 
+     def save_table(self, filename="q_table.npy"):
+         np.save(filename, dict(self.q_table))</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_16"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_16_1" aria-expanded="false" aria-controls="job_list___sub_collapse_16_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_16_1"><button class="btn btn-outline-success"><span class="job_id">16 : Job ID 0822b13a07324b5d8deaa7507d17ac14</span></button></div></a><div aria-labelledby="job_list___sub_heading_16_1" data-parent="#job_list___sub_accordion_16" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_16_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=30" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (30, 67), end pos: (30, 68)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Sub_Mod, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -27,7 +27,7 @@
+             
+             q_target = reward + self.gamma * max_next_q
+ 
+-        self.q_table[state_key][action_idx] += self.lr * (q_target - q_predict)
++        self.q_table[state_key][action_idx] += self.lr * (q_target % q_predict)
+ 
+     def save_table(self, filename="q_table.npy"):
+         np.save(filename, dict(self.q_table))</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_17"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_17_1" aria-expanded="false" aria-controls="job_list___sub_collapse_17_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_17_1"><button class="btn btn-outline-success"><span class="job_id">17 : Job ID ce728e2d974c4fd798f15355f6f288e6</span></button></div></a><div aria-labelledby="job_list___sub_heading_17_1" data-parent="#job_list___sub_accordion_17" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_17_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=30" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (30, 67), end pos: (30, 68)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Sub_Pow, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -27,7 +27,7 @@
+             
+             q_target = reward + self.gamma * max_next_q
+ 
+-        self.q_table[state_key][action_idx] += self.lr * (q_target - q_predict)
++        self.q_table[state_key][action_idx] += self.lr * (q_target ** q_predict)
+ 
+     def save_table(self, filename="q_table.npy"):
+         np.save(filename, dict(self.q_table))</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_18"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_18_1" aria-expanded="false" aria-controls="job_list___sub_collapse_18_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_18_1"><button class="btn btn-outline-success"><span class="job_id">18 : Job ID 536da7e221ef40a1a696bbe931600d0d</span></button></div></a><div aria-labelledby="job_list___sub_heading_18_1" data-parent="#job_list___sub_accordion_18" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_18_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=30" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (30, 67), end pos: (30, 68)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Sub_RShift, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -27,7 +27,7 @@
+             
+             q_target = reward + self.gamma * max_next_q
+ 
+-        self.q_table[state_key][action_idx] += self.lr * (q_target - q_predict)
++        self.q_table[state_key][action_idx] += self.lr * (q_target &gt;&gt; q_predict)
+ 
+     def save_table(self, filename="q_table.npy"):
+         np.save(filename, dict(self.q_table))</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_19"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_19_1" aria-expanded="false" aria-controls="job_list___sub_collapse_19_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_19_1"><button class="btn btn-outline-success"><span class="job_id">19 : Job ID 07b6f91876a140bf9767d070250aa978</span></button></div></a><div aria-labelledby="job_list___sub_heading_19_1" data-parent="#job_list___sub_accordion_19" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_19_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=30" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (30, 67), end pos: (30, 68)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Sub_LShift, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -27,7 +27,7 @@
+             
+             q_target = reward + self.gamma * max_next_q
+ 
+-        self.q_table[state_key][action_idx] += self.lr * (q_target - q_predict)
++        self.q_table[state_key][action_idx] += self.lr * (q_target &lt;&lt; q_predict)
+ 
+     def save_table(self, filename="q_table.npy"):
+         np.save(filename, dict(self.q_table))</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_20"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_20_1" aria-expanded="false" aria-controls="job_list___sub_collapse_20_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_20_1"><button class="btn btn-outline-success"><span class="job_id">20 : Job ID 7d3806c9afd84e40be6cd1c6370e67d6</span></button></div></a><div aria-labelledby="job_list___sub_heading_20_1" data-parent="#job_list___sub_accordion_20" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_20_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=30" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (30, 67), end pos: (30, 68)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Sub_BitOr, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -27,7 +27,7 @@
+             
+             q_target = reward + self.gamma * max_next_q
+ 
+-        self.q_table[state_key][action_idx] += self.lr * (q_target - q_predict)
++        self.q_table[state_key][action_idx] += self.lr * (q_target | q_predict)
+ 
+     def save_table(self, filename="q_table.npy"):
+         np.save(filename, dict(self.q_table))</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_21"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_21_1" aria-expanded="false" aria-controls="job_list___sub_collapse_21_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_21_1"><button class="btn btn-outline-success"><span class="job_id">21 : Job ID 0c4e8717b82b45f2afc8e82581d5e31d</span></button></div></a><div aria-labelledby="job_list___sub_heading_21_1" data-parent="#job_list___sub_accordion_21" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_21_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=30" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (30, 67), end pos: (30, 68)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Sub_BitAnd, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -27,7 +27,7 @@
+             
+             q_target = reward + self.gamma * max_next_q
+ 
+-        self.q_table[state_key][action_idx] += self.lr * (q_target - q_predict)
++        self.q_table[state_key][action_idx] += self.lr * (q_target &amp; q_predict)
+ 
+     def save_table(self, filename="q_table.npy"):
+         np.save(filename, dict(self.q_table))</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_22"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_22_1" aria-expanded="false" aria-controls="job_list___sub_collapse_22_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_22_1"><button class="btn btn-outline-success"><span class="job_id">22 : Job ID 28ef47c0a49347699b72741539c7bd79</span></button></div></a><div aria-labelledby="job_list___sub_heading_22_1" data-parent="#job_list___sub_accordion_22" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_22_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=30" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (30, 67), end pos: (30, 68)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Sub_BitXor, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -27,7 +27,7 @@
+             
+             q_target = reward + self.gamma * max_next_q
+ 
+-        self.q_table[state_key][action_idx] += self.lr * (q_target - q_predict)
++        self.q_table[state_key][action_idx] += self.lr * (q_target ^ q_predict)
+ 
+     def save_table(self, filename="q_table.npy"):
+         np.save(filename, dict(self.q_table))</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_23"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_23_1" aria-expanded="false" aria-controls="job_list___sub_collapse_23_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_23_1"><button class="btn btn-outline-success"><span class="job_id">23 : Job ID f1fde9479bf3424a8b29c28ffb8e8feb</span></button></div></a><div aria-labelledby="job_list___sub_heading_23_1" data-parent="#job_list___sub_accordion_23" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_23_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=28" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (28, 43), end pos: (28, 44)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Mul_Add, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -25,7 +25,7 @@
+             next_q_values = self.q_table[next_state_key]
+             max_next_q = np.max(next_q_values)
+             
+-            q_target = reward + self.gamma * max_next_q
++            q_target = reward + self.gamma + max_next_q
+ 
+         self.q_table[state_key][action_idx] += self.lr * (q_target - q_predict)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_24"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_24_1" aria-expanded="false" aria-controls="job_list___sub_collapse_24_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_24_1"><button class="btn btn-outline-success"><span class="job_id">24 : Job ID 9b67b075b18347aea2469356708f616b</span></button></div></a><div aria-labelledby="job_list___sub_heading_24_1" data-parent="#job_list___sub_accordion_24" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_24_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=30" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (30, 55), end pos: (30, 56)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Mul_Add, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -27,7 +27,7 @@
+             
+             q_target = reward + self.gamma * max_next_q
+ 
+-        self.q_table[state_key][action_idx] += self.lr * (q_target - q_predict)
++        self.q_table[state_key][action_idx] += self.lr + (q_target - q_predict)
+ 
+     def save_table(self, filename="q_table.npy"):
+         np.save(filename, dict(self.q_table))</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_25"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_25_1" aria-expanded="false" aria-controls="job_list___sub_collapse_25_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_25_1"><button class="btn btn-outline-success"><span class="job_id">25 : Job ID c529d0b8c22e4093bbd87162a3c9cba3</span></button></div></a><div aria-labelledby="job_list___sub_heading_25_1" data-parent="#job_list___sub_accordion_25" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_25_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=28" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (28, 43), end pos: (28, 44)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Mul_Sub, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -25,7 +25,7 @@
+             next_q_values = self.q_table[next_state_key]
+             max_next_q = np.max(next_q_values)
+             
+-            q_target = reward + self.gamma * max_next_q
++            q_target = reward + self.gamma - max_next_q
+ 
+         self.q_table[state_key][action_idx] += self.lr * (q_target - q_predict)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_26"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_26_1" aria-expanded="false" aria-controls="job_list___sub_collapse_26_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_26_1"><button class="btn btn-outline-success"><span class="job_id">26 : Job ID f9b5e1cd0ce94664a25adfe03c7fde6c</span></button></div></a><div aria-labelledby="job_list___sub_heading_26_1" data-parent="#job_list___sub_accordion_26" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_26_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=30" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (30, 55), end pos: (30, 56)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Mul_Sub, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -27,7 +27,7 @@
+             
+             q_target = reward + self.gamma * max_next_q
+ 
+-        self.q_table[state_key][action_idx] += self.lr * (q_target - q_predict)
++        self.q_table[state_key][action_idx] += self.lr - (q_target - q_predict)
+ 
+     def save_table(self, filename="q_table.npy"):
+         np.save(filename, dict(self.q_table))</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_27"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_27_1" aria-expanded="false" aria-controls="job_list___sub_collapse_27_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_27_1"><button class="btn btn-outline-success"><span class="job_id">27 : Job ID d9497f0466b94431b216253e2184b9b8</span></button></div></a><div aria-labelledby="job_list___sub_heading_27_1" data-parent="#job_list___sub_accordion_27" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_27_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=28" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (28, 43), end pos: (28, 44)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Mul_Div, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -25,7 +25,7 @@
+             next_q_values = self.q_table[next_state_key]
+             max_next_q = np.max(next_q_values)
+             
+-            q_target = reward + self.gamma * max_next_q
++            q_target = reward + self.gamma / max_next_q
+ 
+         self.q_table[state_key][action_idx] += self.lr * (q_target - q_predict)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_28"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_28_1" aria-expanded="false" aria-controls="job_list___sub_collapse_28_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_28_1"><button class="btn btn-outline-success"><span class="job_id">28 : Job ID 55948e30115d4beca3211ac4afd44e6f</span></button></div></a><div aria-labelledby="job_list___sub_heading_28_1" data-parent="#job_list___sub_accordion_28" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_28_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=30" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (30, 55), end pos: (30, 56)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Mul_Div, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -27,7 +27,7 @@
+             
+             q_target = reward + self.gamma * max_next_q
+ 
+-        self.q_table[state_key][action_idx] += self.lr * (q_target - q_predict)
++        self.q_table[state_key][action_idx] += self.lr / (q_target - q_predict)
+ 
+     def save_table(self, filename="q_table.npy"):
+         np.save(filename, dict(self.q_table))</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_29"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_29_1" aria-expanded="false" aria-controls="job_list___sub_collapse_29_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_29_1"><button class="btn btn-outline-success"><span class="job_id">29 : Job ID b750c5dda39b41c1a55ccc466d31f6d3</span></button></div></a><div aria-labelledby="job_list___sub_heading_29_1" data-parent="#job_list___sub_accordion_29" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_29_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=28" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (28, 43), end pos: (28, 44)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Mul_FloorDiv, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -25,7 +25,7 @@
+             next_q_values = self.q_table[next_state_key]
+             max_next_q = np.max(next_q_values)
+             
+-            q_target = reward + self.gamma * max_next_q
++            q_target = reward + self.gamma // max_next_q
+ 
+         self.q_table[state_key][action_idx] += self.lr * (q_target - q_predict)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_30"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_30_1" aria-expanded="false" aria-controls="job_list___sub_collapse_30_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_30_1"><button class="btn btn-outline-success"><span class="job_id">30 : Job ID 5e6d514d587841b78df86cfc0bb01c69</span></button></div></a><div aria-labelledby="job_list___sub_heading_30_1" data-parent="#job_list___sub_accordion_30" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_30_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=30" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (30, 55), end pos: (30, 56)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Mul_FloorDiv, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -27,7 +27,7 @@
+             
+             q_target = reward + self.gamma * max_next_q
+ 
+-        self.q_table[state_key][action_idx] += self.lr * (q_target - q_predict)
++        self.q_table[state_key][action_idx] += self.lr // (q_target - q_predict)
+ 
+     def save_table(self, filename="q_table.npy"):
+         np.save(filename, dict(self.q_table))</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_31"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_31_1" aria-expanded="false" aria-controls="job_list___sub_collapse_31_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_31_1"><button class="btn btn-outline-success"><span class="job_id">31 : Job ID 1701c501e45f41d7a7d5f6784de1c8a1</span></button></div></a><div aria-labelledby="job_list___sub_heading_31_1" data-parent="#job_list___sub_accordion_31" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_31_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=28" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (28, 43), end pos: (28, 44)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Mul_Mod, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -25,7 +25,7 @@
+             next_q_values = self.q_table[next_state_key]
+             max_next_q = np.max(next_q_values)
+             
+-            q_target = reward + self.gamma * max_next_q
++            q_target = reward + self.gamma % max_next_q
+ 
+         self.q_table[state_key][action_idx] += self.lr * (q_target - q_predict)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_32"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_32_1" aria-expanded="false" aria-controls="job_list___sub_collapse_32_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_32_1"><button class="btn btn-outline-success"><span class="job_id">32 : Job ID df47c7b0e5b54fcb80b93785e12f6057</span></button></div></a><div aria-labelledby="job_list___sub_heading_32_1" data-parent="#job_list___sub_accordion_32" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_32_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=30" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (30, 55), end pos: (30, 56)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Mul_Mod, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -27,7 +27,7 @@
+             
+             q_target = reward + self.gamma * max_next_q
+ 
+-        self.q_table[state_key][action_idx] += self.lr * (q_target - q_predict)
++        self.q_table[state_key][action_idx] += self.lr % (q_target - q_predict)
+ 
+     def save_table(self, filename="q_table.npy"):
+         np.save(filename, dict(self.q_table))</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_33"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_33_1" aria-expanded="false" aria-controls="job_list___sub_collapse_33_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_33_1"><button class="btn btn-outline-success"><span class="job_id">33 : Job ID 1d09179b1fce4cb99c427d8257686110</span></button></div></a><div aria-labelledby="job_list___sub_heading_33_1" data-parent="#job_list___sub_accordion_33" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_33_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=28" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (28, 43), end pos: (28, 44)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Mul_Pow, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -25,7 +25,7 @@
+             next_q_values = self.q_table[next_state_key]
+             max_next_q = np.max(next_q_values)
+             
+-            q_target = reward + self.gamma * max_next_q
++            q_target = reward + self.gamma ** max_next_q
+ 
+         self.q_table[state_key][action_idx] += self.lr * (q_target - q_predict)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_34"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_34_1" aria-expanded="false" aria-controls="job_list___sub_collapse_34_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_34_1"><button class="btn btn-outline-success"><span class="job_id">34 : Job ID e751a1c857954059a69d7b4f880ac1c3</span></button></div></a><div aria-labelledby="job_list___sub_heading_34_1" data-parent="#job_list___sub_accordion_34" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_34_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=30" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (30, 55), end pos: (30, 56)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Mul_Pow, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -27,7 +27,7 @@
+             
+             q_target = reward + self.gamma * max_next_q
+ 
+-        self.q_table[state_key][action_idx] += self.lr * (q_target - q_predict)
++        self.q_table[state_key][action_idx] += self.lr ** (q_target - q_predict)
+ 
+     def save_table(self, filename="q_table.npy"):
+         np.save(filename, dict(self.q_table))</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_35"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_35_1" aria-expanded="false" aria-controls="job_list___sub_collapse_35_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_35_1"><button class="btn btn-outline-success"><span class="job_id">35 : Job ID 8ff7578dee7b44d59151aebb9e2673f3</span></button></div></a><div aria-labelledby="job_list___sub_heading_35_1" data-parent="#job_list___sub_accordion_35" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_35_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=28" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (28, 43), end pos: (28, 44)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Mul_RShift, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -25,7 +25,7 @@
+             next_q_values = self.q_table[next_state_key]
+             max_next_q = np.max(next_q_values)
+             
+-            q_target = reward + self.gamma * max_next_q
++            q_target = reward + self.gamma &gt;&gt; max_next_q
+ 
+         self.q_table[state_key][action_idx] += self.lr * (q_target - q_predict)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_36"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_36_1" aria-expanded="false" aria-controls="job_list___sub_collapse_36_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_36_1"><button class="btn btn-outline-success"><span class="job_id">36 : Job ID 3888c8d61252432387d53fd9745083ac</span></button></div></a><div aria-labelledby="job_list___sub_heading_36_1" data-parent="#job_list___sub_accordion_36" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_36_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=30" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (30, 55), end pos: (30, 56)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Mul_RShift, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -27,7 +27,7 @@
+             
+             q_target = reward + self.gamma * max_next_q
+ 
+-        self.q_table[state_key][action_idx] += self.lr * (q_target - q_predict)
++        self.q_table[state_key][action_idx] += self.lr &gt;&gt; (q_target - q_predict)
+ 
+     def save_table(self, filename="q_table.npy"):
+         np.save(filename, dict(self.q_table))</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_37"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_37_1" aria-expanded="false" aria-controls="job_list___sub_collapse_37_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_37_1"><button class="btn btn-outline-success"><span class="job_id">37 : Job ID 179b23ee0d1546cca8314ad7df387367</span></button></div></a><div aria-labelledby="job_list___sub_heading_37_1" data-parent="#job_list___sub_accordion_37" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_37_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=28" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (28, 43), end pos: (28, 44)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Mul_LShift, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -25,7 +25,7 @@
+             next_q_values = self.q_table[next_state_key]
+             max_next_q = np.max(next_q_values)
+             
+-            q_target = reward + self.gamma * max_next_q
++            q_target = reward + self.gamma &lt;&lt; max_next_q
+ 
+         self.q_table[state_key][action_idx] += self.lr * (q_target - q_predict)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_38"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_38_1" aria-expanded="false" aria-controls="job_list___sub_collapse_38_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_38_1"><button class="btn btn-outline-success"><span class="job_id">38 : Job ID 977ea0d5a0584300af8585ed0e164910</span></button></div></a><div aria-labelledby="job_list___sub_heading_38_1" data-parent="#job_list___sub_accordion_38" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_38_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=30" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (30, 55), end pos: (30, 56)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Mul_LShift, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -27,7 +27,7 @@
+             
+             q_target = reward + self.gamma * max_next_q
+ 
+-        self.q_table[state_key][action_idx] += self.lr * (q_target - q_predict)
++        self.q_table[state_key][action_idx] += self.lr &lt;&lt; (q_target - q_predict)
+ 
+     def save_table(self, filename="q_table.npy"):
+         np.save(filename, dict(self.q_table))</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_39"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_39_1" aria-expanded="false" aria-controls="job_list___sub_collapse_39_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_39_1"><button class="btn btn-outline-success"><span class="job_id">39 : Job ID 58504b3d1df04bcab856ecc98c1f795c</span></button></div></a><div aria-labelledby="job_list___sub_heading_39_1" data-parent="#job_list___sub_accordion_39" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_39_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=28" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (28, 43), end pos: (28, 44)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Mul_BitOr, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -25,7 +25,7 @@
+             next_q_values = self.q_table[next_state_key]
+             max_next_q = np.max(next_q_values)
+             
+-            q_target = reward + self.gamma * max_next_q
++            q_target = reward + self.gamma | max_next_q
+ 
+         self.q_table[state_key][action_idx] += self.lr * (q_target - q_predict)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_40"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_40_1" aria-expanded="false" aria-controls="job_list___sub_collapse_40_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_40_1"><button class="btn btn-outline-success"><span class="job_id">40 : Job ID 20e97646df374885904301d5b74d7680</span></button></div></a><div aria-labelledby="job_list___sub_heading_40_1" data-parent="#job_list___sub_accordion_40" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_40_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=30" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (30, 55), end pos: (30, 56)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Mul_BitOr, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -27,7 +27,7 @@
+             
+             q_target = reward + self.gamma * max_next_q
+ 
+-        self.q_table[state_key][action_idx] += self.lr * (q_target - q_predict)
++        self.q_table[state_key][action_idx] += self.lr | (q_target - q_predict)
+ 
+     def save_table(self, filename="q_table.npy"):
+         np.save(filename, dict(self.q_table))</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_41"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_41_1" aria-expanded="false" aria-controls="job_list___sub_collapse_41_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_41_1"><button class="btn btn-outline-success"><span class="job_id">41 : Job ID b65a826d1a7c4e3c90a43526a79345fa</span></button></div></a><div aria-labelledby="job_list___sub_heading_41_1" data-parent="#job_list___sub_accordion_41" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_41_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=28" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (28, 43), end pos: (28, 44)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Mul_BitAnd, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -25,7 +25,7 @@
+             next_q_values = self.q_table[next_state_key]
+             max_next_q = np.max(next_q_values)
+             
+-            q_target = reward + self.gamma * max_next_q
++            q_target = reward + self.gamma &amp; max_next_q
+ 
+         self.q_table[state_key][action_idx] += self.lr * (q_target - q_predict)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_42"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_42_1" aria-expanded="false" aria-controls="job_list___sub_collapse_42_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_42_1"><button class="btn btn-outline-success"><span class="job_id">42 : Job ID 53d30b8b560a4c64b38f69af7728fa7b</span></button></div></a><div aria-labelledby="job_list___sub_heading_42_1" data-parent="#job_list___sub_accordion_42" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_42_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=30" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (30, 55), end pos: (30, 56)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Mul_BitAnd, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -27,7 +27,7 @@
+             
+             q_target = reward + self.gamma * max_next_q
+ 
+-        self.q_table[state_key][action_idx] += self.lr * (q_target - q_predict)
++        self.q_table[state_key][action_idx] += self.lr &amp; (q_target - q_predict)
+ 
+     def save_table(self, filename="q_table.npy"):
+         np.save(filename, dict(self.q_table))</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_43"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_43_1" aria-expanded="false" aria-controls="job_list___sub_collapse_43_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_43_1"><button class="btn btn-outline-success"><span class="job_id">43 : Job ID ea67bd4c148a43df821e6fde4c997771</span></button></div></a><div aria-labelledby="job_list___sub_heading_43_1" data-parent="#job_list___sub_accordion_43" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_43_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=28" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (28, 43), end pos: (28, 44)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Mul_BitXor, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -25,7 +25,7 @@
+             next_q_values = self.q_table[next_state_key]
+             max_next_q = np.max(next_q_values)
+             
+-            q_target = reward + self.gamma * max_next_q
++            q_target = reward + self.gamma ^ max_next_q
+ 
+         self.q_table[state_key][action_idx] += self.lr * (q_target - q_predict)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_44"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_44_1" aria-expanded="false" aria-controls="job_list___sub_collapse_44_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_44_1"><button class="btn btn-outline-success"><span class="job_id">44 : Job ID 96b5da6d955543059e3b10ca5bd0ddf8</span></button></div></a><div aria-labelledby="job_list___sub_heading_44_1" data-parent="#job_list___sub_accordion_44" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_44_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=30" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (30, 55), end pos: (30, 56)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Mul_BitXor, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -27,7 +27,7 @@
+             
+             q_target = reward + self.gamma * max_next_q
+ 
+-        self.q_table[state_key][action_idx] += self.lr * (q_target - q_predict)
++        self.q_table[state_key][action_idx] += self.lr ^ (q_target - q_predict)
+ 
+     def save_table(self, filename="q_table.npy"):
+         np.save(filename, dict(self.q_table))</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_45"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_45_1" aria-expanded="false" aria-controls="job_list___sub_collapse_45_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_45_1"><button class="btn btn-outline-success"><span class="job_id">45 : Job ID f18558d6315f405abef9b091134e6585</span></button></div></a><div aria-labelledby="job_list___sub_heading_45_1" data-parent="#job_list___sub_accordion_45" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_45_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=22" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (22, 11), end pos: (22, 15)</button></a></pre><pre>operator: core/AddNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -19,7 +19,7 @@
+         
+         q_predict = self.q_table[state_key][action_idx]
+         
+-        if done:
++        if not done:
+             q_target = reward
+         else:
+             next_q_values = self.q_table[next_state_key]</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_46"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_46_1" aria-expanded="false" aria-controls="job_list___sub_collapse_46_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_46_1"><button class="btn btn-outline-success"><span class="job_id">46 : Job ID 1fefff53dd154673b64b7bf85388b7f3</span></button></div></a><div aria-labelledby="job_list___sub_heading_46_1" data-parent="#job_list___sub_accordion_46" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_46_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=37" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (37, 50), end pos: (37, 54)</button></a></pre><pre>operator: core/ReplaceTrueWithFalse, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -34,7 +34,7 @@
+ 
+     def load_table(self, filename="q_table.npy"):
+         try:
+-            data = np.load(filename, allow_pickle=True).item()
++            data = np.load(filename, allow_pickle=False).item()
+             self.q_table = defaultdict(lambda: np.zeros(len(self.actions)), data)
+             print(f"Wczytano tabelê Q: {len(self.q_table)} stanów.")
+         except FileNotFoundError:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_47"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_47_1" aria-expanded="false" aria-controls="job_list___sub_collapse_47_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_47_1"><button class="btn btn-outline-success"><span class="job_id">47 : Job ID 4bf4398679e542759d04192645fac2ab</span></button></div></a><div aria-labelledby="job_list___sub_heading_47_1" data-parent="#job_list___sub_accordion_47" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_47_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=40" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (40, 15), end pos: (40, 32)</button></a></pre><pre>operator: core/ExceptionReplacer, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -37,5 +37,5 @@
+             data = np.load(filename, allow_pickle=True).item()
+             self.q_table = defaultdict(lambda: np.zeros(len(self.actions)), data)
+             print(f"Wczytano tabelê Q: {len(self.q_table)} stanów.")
+-        except FileNotFoundError:
++        except CosmicRayTestingException:
+             print("Nie znaleziono pliku zapisu, startujê od zera.")</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_48"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_48_1" aria-expanded="false" aria-controls="job_list___sub_collapse_48_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_48_1"><button class="btn btn-outline-success"><span class="job_id">48 : Job ID c75989b0527441f0badf41f761c8d527</span></button></div></a><div aria-labelledby="job_list___sub_heading_48_1" data-parent="#job_list___sub_accordion_48" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_48_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=5" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (5, 46), end pos: (5, 50)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -2,7 +2,7 @@
+ from collections import defaultdict
+ 
+ class QLearningTable:
+-    def __init__(self, actions, learning_rate=0.01, reward_decay=0.9):
++    def __init__(self, actions, learning_rate= 1.01, reward_decay=0.9):
+         self.actions = actions
+         self.lr = learning_rate     # Alpha
+         self.gamma = reward_decay   # Gamma</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_49"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_49_1" aria-expanded="false" aria-controls="job_list___sub_collapse_49_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_49_1"><button class="btn btn-outline-success"><span class="job_id">49 : Job ID 776f7bedd7794a7ca58ccbda33d1aa1e</span></button></div></a><div aria-labelledby="job_list___sub_heading_49_1" data-parent="#job_list___sub_accordion_49" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_49_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=5" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (5, 46), end pos: (5, 50)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -2,7 +2,7 @@
+ from collections import defaultdict
+ 
+ class QLearningTable:
+-    def __init__(self, actions, learning_rate=0.01, reward_decay=0.9):
++    def __init__(self, actions, learning_rate= -0.99, reward_decay=0.9):
+         self.actions = actions
+         self.lr = learning_rate     # Alpha
+         self.gamma = reward_decay   # Gamma</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_50"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_50_1" aria-expanded="false" aria-controls="job_list___sub_collapse_50_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_50_1"><button class="btn btn-outline-success"><span class="job_id">50 : Job ID d42cec5d83514e6c99dbf0639475e69a</span></button></div></a><div aria-labelledby="job_list___sub_heading_50_1" data-parent="#job_list___sub_accordion_50" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_50_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=5" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (5, 65), end pos: (5, 68)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -2,7 +2,7 @@
+ from collections import defaultdict
+ 
+ class QLearningTable:
+-    def __init__(self, actions, learning_rate=0.01, reward_decay=0.9):
++    def __init__(self, actions, learning_rate=0.01, reward_decay= 1.9):
+         self.actions = actions
+         self.lr = learning_rate     # Alpha
+         self.gamma = reward_decay   # Gamma</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_51"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_51_1" aria-expanded="false" aria-controls="job_list___sub_collapse_51_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_51_1"><button class="btn btn-outline-success"><span class="job_id">51 : Job ID c0f77e4062e046e990e4ab86a1cd979b</span></button></div></a><div aria-labelledby="job_list___sub_heading_51_1" data-parent="#job_list___sub_accordion_51" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_51_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: WorkerOutcome.NORMAL</p><p>test outcome: TestOutcome.KILLED</p></div></div><pre class="location"><a href="pycharm://open?file=src\learning\q_learning.py&amp;line=5" class="text-secondary"><button class="btn btn-outline-dark">src\learning\q_learning.py, start pos: (5, 65), end pos: (5, 68)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc\learning\q_learning.py
++++ bsrc\learning\q_learning.py
+@@ -2,7 +2,7 @@
+ from collections import defaultdict
+ 
+ class QLearningTable:
+-    def __init__(self, actions, learning_rate=0.01, reward_decay=0.9):
++    def __init__(self, actions, learning_rate=0.01, reward_decay= -0.09999999999999998):
+         self.actions = actions
+         self.lr = learning_rate     # Alpha
+         self.gamma = reward_decay   # Gamma</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts =============================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\PC\github\MultiAgentsLogistics
+collected 0 items
+
+============================ no tests ran in 0.00s ============================
+</pre></div></div></div></div></div></div></div></div></div></div><script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script><script type="text/javascript">$('div.job_list___sub_multi_collapse').on('shown.bs.collapse',  function () {    correct_behavior_functional_buttons();  });$('div.job_list___sub_multi_collapse').on('hidden.bs.collapse',  function () {    correct_behavior_functional_buttons();  });function correct_behavior_functional_buttons() {    var expand = false;    var collapse = false;    $('a.job_list___sub_multi_heading').each(function(index) {      if ($(this).attr('aria-expanded') == 'false') {        expand = true;        return false;      };    });    $('a.job_list___sub_multi_heading').each(function(index) {      if ($(this).attr('aria-expanded') == 'true') {        collapse = true;        return false;      };    });    if (expand) {      $('div#job_item_expand_all').css('display', 'inline-block');    } else {      $('div#job_item_expand_all').css('display', 'none');    };    if (collapse) {      $('div#job_item_collapse_all').css('display', 'inline-block');    } else {      $('div#job_item_collapse_all').css('display', 'none');    };  };correct_behavior_functional_buttons();</script></body></html>
